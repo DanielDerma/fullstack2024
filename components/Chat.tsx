@@ -81,6 +81,7 @@ export function CardsChat({ sendMessage, messages, email }: ChatProps) {
             ))}
           </div>
         </CardContent>
+
         <CardFooter>
           <form
             action="#"
