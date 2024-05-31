@@ -1,3 +1,4 @@
+import SocketCtx from '@/components/SocketCtx';
 import { auth, signOut } from 'app/auth';
 
 export default async function ProtectedPage() {
@@ -7,6 +8,7 @@ export default async function ProtectedPage() {
     <div className="flex h-screen bg-black">
       <div className="w-screen h-screen flex flex-col space-y-5 justify-center items-center text-white">
         You are logged in as {session?.user?.email}
+        <SocketCtx />
         <SignOut />
       </div>
     </div>
