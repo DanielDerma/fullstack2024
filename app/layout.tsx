@@ -3,7 +3,6 @@ import './globals.css';
 
 import { GeistSans } from 'geist/font/sans';
 import { Inter as FontSans } from "next/font/google";
-import NextAuthSessionProvider from "@/components/SessionProvider"
 
 const fontSans = FontSans({
   subsets: ["latin"],
