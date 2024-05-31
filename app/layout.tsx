@@ -1,6 +1,14 @@
+import { cn } from '@/lib/utils';
 import './globals.css';
 
 import { GeistSans } from 'geist/font/sans';
+import { Inter as FontSans } from "next/font/google";
+import NextAuthSessionProvider from "@/components/SessionProvider"
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 let title = 'Next.js + Postgres Auth Starter';
 let description =
@@ -24,7 +32,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={GeistSans.variable}>{children}</body>
+      <body className={cn(
+        "min-h-screen bg-background font-sans antialiased",
+        fontSans.variable,
+        GeistSans.variable
+      )}>
+        {children}
+      </body>
     </html>
   );
 }

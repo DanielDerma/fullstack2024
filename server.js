@@ -20,9 +20,19 @@ app.prepare().then(() => {
 
   const io = new Server(httpServer);
 
-  io.on("connection", (socket) => {
-    // ...
-  });
+  io.on('connection', (socket) => {
+    console.log(`Socket ${socket.id} connected.`);
+
+    // Listen for incoming messages and broadcast to all clients
+    socket.on('message', async (message) => {      
+        io.emit('message', message);
+    });
+
+    // Clean up the socket on disconnect
+    socket.on('disconnect', () => {
+        console.log(`Socket ${socket.id} disconnected.`);
+    });
+});
 
   httpServer
     .once("error", (err) => {
