@@ -55,6 +55,12 @@ export default function Page() {
         </div>
         <div className="flex space-x-3">
           <Link
+            href="/login"
+            className="text-stone-400 underline hover:text-stone-200 transition-all"
+          >
+            Login
+          </Link>
+          <Link
             href="/protected"
             className="text-stone-400 underline hover:text-stone-200 transition-all"
           >
